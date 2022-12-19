@@ -5,6 +5,7 @@
 @font-face {
   font-family: 'Ubuntu';
   src: ('./assets/font/Ubuntu-Regular.ttf');
+  color: white;
   }
 
 body {
