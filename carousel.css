@@ -2,6 +2,11 @@
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
 
+@font-face {
+  font-family: 'Ubuntu';
+  src: ('./assets/font/Ubuntu-Regular.ttf');
+  }
+
 body {
   padding-top: 5%;
   padding-bottom: 5%;
