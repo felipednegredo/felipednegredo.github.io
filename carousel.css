@@ -149,8 +149,6 @@ body {
 
 .portifolio_page{
   position: relative;
-  right: 20vh;
-  bottom: 0px;
   height: 20vh;
 }
 
@@ -303,8 +301,8 @@ body {
 
 
 .navbar-brand{
-  width: 5rem;
-  height: 5rem;
+  width: 4rem;
+  height: 4rem;
   left: 12vw;
   border-radius: 50%;
   background: #40444B;
