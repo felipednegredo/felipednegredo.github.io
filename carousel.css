@@ -22,6 +22,10 @@ body {
   padding-top: 5%;
 }
 
+p{
+  color: white;
+}
+
 .container{
   background-color: #40444B;
   border-radius: 1%;
@@ -178,7 +182,6 @@ body {
   margin-right: 10vh;
   background-color: #40444B;
   border-radius: 5%;
-  color: white;
 }
 
 .contato{
@@ -192,7 +195,6 @@ body {
   margin-right: 10vh;
   background-color: #40444B;
   border-radius: 5%;
-  color: white;
 }
 
 .sobre_mim{
