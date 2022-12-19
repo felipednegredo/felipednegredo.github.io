@@ -22,7 +22,6 @@ body {
   padding-top: 5%;
 }
 
-
 .container{
   background-color: #40444B;
   border-radius: 1%;
@@ -172,8 +171,6 @@ body {
 
 .sobre_page{
   position: relative;
-  right: 20vh;
-  bottom: 0px;
   height: 20vh;
 }
 
