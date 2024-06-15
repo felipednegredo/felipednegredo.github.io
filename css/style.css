@@ -1,0 +1,420 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+@media (max-width: 768px) {
+    .github-stats {
+        flex-direction: column; /* Empilha os elementos verticalmente em telas pequenas */
+    }
+
+    #github-stats, #toplans {
+        width: 100%; /* Faz os iframes ocuparem 100% da largura do contêiner em telas pequenas */
+        margin-bottom: var(--margin-section); /* Adiciona margem abaixo de cada iframe para separação */
+    }
+}
+
+:root {
+    --background-main: #23272A;
+    --background-secondary: #40444B;
+    --font-color: #fff;
+    --secondary-color: #7289DA;
+    --nav-padding: 0.5rem;
+    --nav-text-align: center;
+    --nav-link-margin: 0 1rem;
+    --section-padding: 5rem;
+    --border-radius: 0.5rem;
+    --margin-section: 1rem;
+    --margin-top-section: 4rem;
+    --iframe-height: 20rem;
+    --iframe-height-less: 10rem;
+    --h2-margin: 1.5rem;
+    --tech_icon_size: 3rem;
+    --margin-tech: 0.25rem;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --card-width: 20rem;
+    --profile-pic-size: 20rem;
+    --card-height: 25rem;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--background-main);
+    color: var(--font-color);
+    padding: var(--margin-section);
+    margin-top: var(--margin-top-section);
+}
+
+nav {
+    background-color: var(--background-main);
+    display: flex;
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; 
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: var(--nav-padding);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil */
+}
+
+nav a {
+    color: var(--font-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem; /* Ajusta padding para maior área clicável */
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave para cor de fundo e cor do texto */
+}
+
+nav a:hover {
+    background-color: var(--hover-background-color); /* Adiciona uma cor de fundo ao hover */
+    color: var(--hover-font-color); /* Adiciona uma cor de fonte ao hover */
+    font-weight: bold; /* Adiciona negrito ao hover */
+}
+
+section {
+    background-color: var(--background-secondary);
+    color: var(--font-color);
+    padding: var(--section-padding);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    margin-left: var(--margin-section);
+    margin-right: var(--margin-section);
+    margin-bottom: var(--margin-section);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil */
+}
+
+#github-activity {
+    width: 100%; /* Ajusta a largura para ocupar 100% do contêiner pai */
+    height: var(--iframe-height); /* Define uma altura fixa, ajuste conforme necessário */
+    border: none; /* Remove a borda padrão */
+    border-radius: var(--border-radius); /* Usa a mesma borda arredondada dos outros elementos */
+    margin-bottom: var(--margin-section); /* Adiciona margem abaixo do iframe, para separação dos elementos seguintes */
+}
+
+#github-activity:hover {
+    transform: translateY(-10px); /* Efeito de levitar ao passar o mouse */
+}
+
+.github-stats {
+    display: flex; /* Cria um flex container */
+    justify-content: space-between; /* Distribui os elementos igualmente no espaço disponível */
+    align-items: center; /* Centraliza os elementos verticalmente */
+}
+
+#github-stats {
+    width: 45%; /* Ajusta a largura para 50% do contêiner pai */
+    height: var(--iframe-height-less); /* Define uma altura menor */
+    flex: 1; /* Faz o elemento ocupar o espaço disponível */
+}
+
+#github-stats:hover {
+    transform: translateY(-10px); /* Efeito de levitar ao passar o mouse */
+}
+
+#toplans{
+    width: 45%; /* Ajusta a largura para 50% do contêiner pai */
+    height: var(--iframe-height-less); /* Define uma altura menor */
+    flex: 1; /* Faz o elemento ocupar o espaço disponível */
+}
+
+#toplans:hover {
+    transform: translateY(-10px); /* Efeito de levitar ao passar o mouse */
+}
+
+h2{
+    text-align: center;
+    background-color: var(--secondary-color);
+    margin-left: var(--margin-section);
+    margin-right: var(--margin-section);
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    padding: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil */
+}
+
+h3{
+    text-align: center;
+    margin: var(--margin-section);
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+
+h4{
+    text-align: center;
+    margin: var(--margin-section);
+    font-weight: bolder;
+}
+
+hr{
+    margin: var(--margin-section);
+    font-weight: bolder;
+}
+
+.tech{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#tech{
+    width: var(--tech_icon_size);
+    height: var(--tech_icon_size);
+    border-radius: var(--border-radius);
+    margin-left: var(--margin-tech);
+    margin-right: var(--margin-tech);
+}
+
+#profile-pic{
+    width: var(--profile-pic-size);
+    height: var(--profile-pic-size);
+    border-radius: 50%;
+}
+
+.profile-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card-info{
+
+}
+
+.card-project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: var(--card-width); /* Largura fixa, mas pode ser ajustada conforme necessário */
+    height: var(--card-height); /* Altura automática baseada no conteúdo */
+    background-color: var(--background-main); /* Cor de fundo branca, mas pode ser alterada */
+    border-radius: var(--border-radius); /* Usa a variável de borda arredondada definida anteriormente */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para dar profundidade */
+    margin: var(--margin-section); /* Margem definida pela variável existente */
+    padding: 20px; /* Espaçamento interno para não colar o conteúdo nas bordas */
+    transition: transform 0.3s ease; /* Transição suave para efeito de hover */
+}
+
+.card-project:hover {
+    transform: translateY(-10px); /* Efeito de levitar ao passar o mouse */
+}
+
+.card-about{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    height: auto;
+    background-color: var(--background-main);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: var(--margin-section);
+    margin-right: var(--margin-section);
+    margin-top: -1rem;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.projects{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card-info p {
+    align-items: center; /* Centraliza os itens verticalmente dentro do parágrafo */
+    margin: var(--margin-tech);
+    padding: 0; /* Remove o padding padrão do parágrafo */
+    font-size: 1rem; /* Define o tamanho da fonte */
+    text-align: center;
+}
+
+.card-info span {
+    display: flex; /* Faz o span se comportar como um container flexível */
+    align-items: center; /* Centraliza os itens verticalmente dentro do span */
+    margin: var(--margin-tech);
+    padding: 0; /* Remove o padding padrão do span */
+    font-size: 1.5rem; /* Define o tamanho da fonte */
+    text-align: center; /* Centraliza o texto horizontalmente */
+}
+
+.card-info span.material-symbols-rounded {
+    margin-right: 8px; /* Adiciona um espaço à direita do ícone para separá-lo do texto */
+    display: inline-flex; /* Exibe o span como um flex container para centralizar o ícone verticalmente */
+    align-items: center; /* Centraliza o conteúdo do span verticalmente */
+}
+
+h1 {
+    text-align: center;
+    margin: var(--margin-section);
+    font-size: 1.5rem;
+}
+
+i{
+    margin: var(--margin-section);
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--secondary-color);
+    background-color: var(--background-secondary);
+    border-radius: 50%;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+i:hover{
+    transform: translateY(-10px);
+}
+
+#contato{
+    text-align: center;
+    margin: var(--margin-section);
+}
+
+a.card-project{
+    text-decoration: none;
+    color: var(--font-color);
+}
+
+.contacts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: var(--margin-section);
+}
+
+.card-experience{
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    height: auto;
+    background-color: var(--background-main);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: var(--margin-section);
+    margin-right: var(--margin-section);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: var(--margin-section);
+}
+
+.card-experience h5{
+    margin: var(--margin-section);
+    font-weight: bolder;
+    font-size: 1rem;
+}
+
+.card-experience p{
+    margin: var(--margin-section);
+}
+
+.card-education{
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    height: auto;
+    background-color: var(--background-main);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: var(--margin-section);
+    margin-right: var(--margin-section);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.card-about .card-description p {
+    display: flex;
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    gap: 8px; /* Adiciona um espaço entre o ícone e o texto */
+    justify-content: center; /* Centraliza o texto horizontalmente */
+}
+
+.material-symbols-rounded {
+    /* Garante que o span se comporte como um item flexível sem quebrar a linha */
+    display: inline-flex; /* Mantém o comportamento inline mas permite alinhamento flex */
+    align-items: center; /* Centraliza o ícone verticalmente */
+}
+
+.card-description p {
+    display: flex;
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    gap: 8px; /* Adiciona um espaço entre o ícone e o texto */
+}
+
+.card-education h5{
+    margin: var(--margin-section);
+    font-weight: bolder;
+    font-size: 1rem;
+}
+
+.card-education p{
+    margin: var(--margin-section);
+}
+
+.card-courses{
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    height: auto;
+    background-color: var(--background-main);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: var(--margin-section);
+    margin-right: var(--margin-section);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.card-courses h5{
+    margin: var(--margin-section);
+    font-weight: bolder;
+    font-size: 1rem;
+}
+
+.card-courses p{
+    margin: var(--margin-section);
+}
+
+.card-courses iframe{
+    width: 100%;
+    height: 20rem;
+    border: none;
+    border-radius: var(--border-radius);
+    margin-bottom: var(--margin-section);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#curriculo h2{
+    text-align: center;
+    background-color: var(--secondary-color);
+    margin-left: var(--margin-section);
+    margin-right: var(--margin-section);
+    border-radius: var(--border-radius);
+    padding: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
