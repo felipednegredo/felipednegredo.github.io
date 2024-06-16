@@ -16,16 +16,28 @@
         width: 100%; /* Faz os iframes ocuparem 100% da largura do contêiner em telas pequenas */
         margin-bottom: var(--margin-section); /* Adiciona margem abaixo de cada iframe para separação */
     }
-}
-
-/* Media query para dispositivos com largura máxima de 600px */
-@media (max-width: 600px) {
     .card-courses iframe {
-        height: 15rem; /* Ajusta a altura para dispositivos menores */
+        height: 18rem; /* Ajusta a altura para dispositivos menores */
     }
 
     .card-courses p {
         margin: 1rem; /* Ajusta a margem para dispositivos menores */
+    }
+
+    #profile-pic{
+        width: 10rem;
+        height: 10rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        object-fit: cover;
+    }
+
+    .card-about {
+        display: block; /* Garante que .card-about seja exibido como um bloco, empilhando verticalmente */
+    }
+    .profile-container {
+        display: flex; /* Mantém .profile-container com display flexível para alinhar seus itens internos horizontalmente */
     }
 }
 
@@ -48,7 +60,7 @@
     --margin-tech: 0.25rem;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --card-width: 20rem;
-    --profile-pic-size: 20rem;
+    --profile-pic-size: 18rem;
     --card-height: 25rem;
 }
 
@@ -139,7 +151,7 @@ section {
     transform: translateY(-10px); /* Efeito de levitar ao passar o mouse */
 }
 
-h2{
+.title{
     text-align: center;
     background-color: var(--secondary-color);
     margin-left: var(--margin-section);
@@ -178,6 +190,9 @@ hr{
 #profile-pic{
     width: var(--profile-pic-size);
     height: var(--profile-pic-size);
+    object-fit: cover;
+    margin: 0 auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 50%;
 }
 
@@ -186,10 +201,6 @@ hr{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-}
-
-.card-info{
-
 }
 
 .card-project {
@@ -229,6 +240,24 @@ hr{
     margin-top: -1rem;
     padding: 20px;
     transition: transform 0.3s ease;
+}
+
+.card-about h{
+    margin: var(--margin-section);
+    font-weight: bolder;
+}
+
+/* Media query para dispositivos com largura máxima de 600px */
+@media (max-width: 600px) {
+    .card-about {
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 10px;
+    }
+
+    .projects {
+        flex-direction: column; /* Empilha os projetos verticalmente */
+    }
 }
 
 .projects{
@@ -424,4 +453,10 @@ a.card-project{
     padding: var(--border-radius);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+#sobre h2{
+    text-align: center;
+    margin: var(--nav-padding);
+}
+
 
