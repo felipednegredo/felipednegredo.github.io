@@ -151,14 +151,6 @@ h2{
 }
 
 h3{
-    text-align: center;
-    margin: var(--margin-section);
-    font-weight: bolder;
-    font-size: 1.5rem;
-}
-
-h4{
-    text-align: center;
     margin: var(--margin-section);
     font-weight: bolder;
 }
@@ -217,6 +209,10 @@ hr{
 
 .card-project:hover {
     transform: translateY(-10px); /* Efeito de levitar ao passar o mouse */
+}
+
+.card-project h3 {
+    text-align: center; /* Centraliza o texto horizontalmente */
 }
 
 .card-about{
