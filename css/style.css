@@ -6,41 +6,6 @@
     box-sizing: border-box;
 }
 
-
-@media (max-width: 768px) {
-    .github-stats {
-        flex-direction: column; /* Empilha os elementos verticalmente em telas pequenas */
-    }
-
-    #github-stats, #toplans {
-        width: 100%; /* Faz os iframes ocuparem 100% da largura do contêiner em telas pequenas */
-        margin-bottom: var(--margin-section); /* Adiciona margem abaixo de cada iframe para separação */
-    }
-    .card-courses iframe {
-        height: 18rem; /* Ajusta a altura para dispositivos menores */
-    }
-
-    .card-courses p {
-        margin: 1rem; /* Ajusta a margem para dispositivos menores */
-    }
-
-    #profile-pic{
-        width: 10rem;
-        height: 10rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        object-fit: cover;
-    }
-
-    .card-about {
-        display: block; /* Garante que .card-about seja exibido como um bloco, empilhando verticalmente */
-    }
-    .profile-container {
-        display: flex; /* Mantém .profile-container com display flexível para alinhar seus itens internos horizontalmente */
-    }
-}
-
 :root {
     --background-main: #23272A;
     --background-secondary: #40444B;
@@ -62,6 +27,57 @@
     --card-width: 20rem;
     --profile-pic-size: 18rem;
     --card-height: 25rem;
+    --topics-padding: 0 0.5em;
+    --topics-font-size: 0.75rem;
+    --topics-line-height: 1.375em;
+    --topics-border-radius: 2em;
+    --topics-padding-right: 0.625em;
+    --topics-padding-left: 0.625em;
+    --topics-margin-bottom: 1em;
+    --topics-margin-right: 1em;
+    --font-size: 0.9rem;
+    --margin-top-iframe: -1rem;
+}
+
+@media (max-width: 600px) {
+    :root {
+        --nav-padding: 0.2rem;
+        --nav-link-margin: 0 0.5rem;
+        --section-padding: 2rem;
+    }
+
+    /* Adicione mais ajustes específicos para mobile aqui */
+}
+
+/* Para telas de até 768px (tablets) */
+@media (max-width: 768px) {
+    :root {
+        --nav-padding: 0.3rem;
+        --nav-link-margin: 0 0.7rem;
+        --section-padding: 1rem;
+        --margin-section: 0.5rem;
+        --margin-top-section: 2rem;
+        --iframe-height: 15rem;
+        --iframe-height-less: 7.5rem;
+        --iframe-margin: -4rem;
+        --h2-margin: 1rem;
+        --tech_icon_size: 2rem;
+        --margin-tech: 0.2rem;
+        --card-width: 15rem;
+        --profile-pic-size: 15rem;
+        --card-height: 20rem;
+        --topics-padding: 0 0.3em;
+        --topics-font-size: 0.6rem;
+        --topics-line-height: 1.125em;
+        --topics-border-radius: 1.5em;
+        --topics-padding-right: 0.5em;
+        --topics-padding-left: 0.5em;
+        --topics-margin-bottom: 0.5em;
+        --topics-margin-right: 0.5em;
+        --font-size: 0.8rem;
+        --margin-text-projects: -0.5rem;
+        --margin-top-iframe: -1rem;
+    }
 }
 
 body {
@@ -93,12 +109,14 @@ nav a {
     padding: 0.5rem 1rem; /* Ajusta padding para maior área clicável */
     border-radius: var(--border-radius);
     transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave para cor de fundo e cor do texto */
+    margin: var(--nav-link-margin);
 }
 
 nav a:hover {
     background-color: var(--hover-background-color); /* Adiciona uma cor de fundo ao hover */
     color: var(--hover-font-color); /* Adiciona uma cor de fonte ao hover */
     font-weight: bold; /* Adiciona negrito ao hover */
+    transition: background-color 0.3s ease, color;
 }
 
 section {
@@ -111,6 +129,12 @@ section {
     margin-right: var(--margin-section);
     margin-bottom: var(--margin-section);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil */
+}
+
+section.active {
+    outline: 2px solid var(--highlight-color); /* Substitua '--highlight-color' pela cor desejada */
+    box-shadow: 0 0 10px var(--highlight-color); /* Adiciona um destaque mais visível */
+    transition: box-shadow 0.3s ease-in-out; /* Transição suave para o destaque */
 }
 
 #github-activity {
@@ -224,6 +248,22 @@ hr{
 
 .card-project h3 {
     text-align: center; /* Centraliza o texto horizontalmente */
+}
+
+.card-project p {
+    text-align: center; /* Centraliza o texto horizontalmente */
+    font-size: var(--font-size); /* Define o tamanho da fonte */
+    margin-left: var(--margin-text-projects);
+    margin-right: var(--margin-text-projects);
+}
+
+.card-project iframe {
+    width: 100%; /* Ocupa 100% da largura do contêiner pai */
+    height: auto; /* Altura se ajusta proporcionalmente */
+    aspect-ratio: 16 / 9; /* Mantém uma proporção, ajuste conforme necessário */
+    border: none; /* Remove a borda padrão */
+    border-radius: var(--border-radius); /* Usa a mesma borda arredondada dos outros elementos */
+    margin-top: var(--margin-top-iframe);
 }
 
 .card-about{
@@ -459,4 +499,26 @@ a.card-project{
     margin: var(--nav-padding);
 }
 
+.topic-tag {
+    display: inline-block;
+    padding: var(--topics-padding); /* Alterado de px para em */
+    font-size: var(--topics-font-size); /* Alterado de px para rem para se adaptar ao tamanho base da fonte do documento */
+    font-weight: var(--base-text-weight-medium, 500);
+    line-height: var(--topics-line-height); /* Alterado de px para em */
+    white-space: nowrap;
+    border: 1px solid transparent;
+    border-radius: var(--topics-border-radius);
+    padding-right: var(--topics-padding-right); /* Alterado de px para em */
+    padding-left: var(--topics-padding-left); /* Alterado de px para em */
+    color: var(--font-color);
+    background-color: var(--secondary-color);
+    margin-bottom: var(--topics-margin-bottom); /* Supondo que --border-radius seja uma medida em px, convertido para em */
+    margin-right: var(--topics-margin-right); /* Supondo que --border-radius seja uma medida em px, convertido para em */
+}
 
+.topics {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
